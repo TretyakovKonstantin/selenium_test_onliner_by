@@ -27,9 +27,9 @@
   }
 
   if(!$was_error) {
-    $in2 = (0 <= $y && $y <= $radius) && (-$radius/2 <= $x && $x <= 0);
-    $in3 = ($x <= 0 && $y <= 0) && ($x + $y*2 >= -$radius);
-    $in4 = ($x >= 0 && $y <= 0) && ($x*$x + $y*$y <= $radius*$radius);
+    $in2 = ($x <= 0 && $y >= 0) && (-$radius <= $x && $radius/2 >= $y);
+    $in3 = ($x <= 0 && $y <= 0) && ($y <= $radius - $x);
+    $in4 = ($x <= 0 && $y <= 0) && ($x*$x + $y*$y <= $radius*$radius);
     $result = $in2 || $in3 || $in4;
 
     $result ? $result = "Точка входит в область.<br>\n" : $result = "Точка находится вне области.<br>\n";

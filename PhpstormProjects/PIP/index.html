@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Лабораторная работа №1</title>
     <script type="text/javascript" src="checkBoundaries.js"></script>
+
 </head>
 <body>
 <table border="1" cellpadding="0" cellspacing="0" width="100%">
@@ -20,7 +21,7 @@
             <img src="bounds.png" alt="Изображение области">
         </td>
         <td class="manipulation" width="60%" align="center" valign="top">
-            <form name="parameters" onsubmit="return validateForm(this)">
+            <form method="post" name="parameters" onsubmit="return validateForm(this)" action="checker.php">
                 <div id="r-group">
                     <label for = "r-group">
                         R =
@@ -52,7 +53,7 @@
                     </label>
                     <input type="text" name="y" id="y" placeholder="-5 … 3">
                 </div>
-                <button id="submit" type="submit" class="submit">Проверить!</button>
+                <input id="submit" type="submit" class="submit" value="Проверить">
             </form>
         </td>
 
